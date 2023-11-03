@@ -1,5 +1,6 @@
-import Navbar from '../Navbar';
-import SideBar from '../SideBar';
+import { Link } from 'react-router-dom';
+import Navbar from '../../pages/Navbar';
+import SideBar from '../../pages/SideBar';
 
 const MainLayout = ({ children }) => {
 	return (
@@ -30,7 +31,9 @@ const MainLayout = ({ children }) => {
 								</svg>
 							</label>
 						</div>
-						<div className="flex-1 px-2 mx-2">Navbar Title</div>
+						<div className="flex-1 px-2 mx-2 text-2xl font-semibold">
+							<Link to={'/'}>Logo</Link>
+						</div>
 						<div className="flex-none hidden lg:block">
 							<Navbar />
 						</div>

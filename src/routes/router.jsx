@@ -1,12 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Login from '../components/Login';
-import Register from '../components/Register';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 import AdminLayout from '../components/layout/AdminLayout';
-import AddService from '../components/AddService';
-import CheckStatus from '../components/CheckStatus';
+import AddService from '../pages/AddService';
+import CheckStatus from '../pages/CheckStatus';
+import Home from '../pages/Home';
 
 const router = createBrowserRouter([
 	// Mian layout route object --- ekai 100
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
 		path: '/', //Main path //Absolute path
 		element: <App />,
 		children: [
+			{
+				index: true,
+				element: <Home />,
+			},
 			{
 				path: 'about', //Main path er under a ei path gulo //Relative path
 				element: <About />,
@@ -39,7 +44,7 @@ const router = createBrowserRouter([
 		element: <AdminLayout />,
 		children: [
 			{
-				path: 'addService',
+				index: true,
 				element: <AddService />,
 			},
 			{
