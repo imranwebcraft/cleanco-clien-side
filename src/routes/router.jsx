@@ -8,6 +8,7 @@ import AdminLayout from '../components/layout/AdminLayout';
 import AddService from '../pages/AddService';
 import CheckStatus from '../pages/CheckStatus';
 import Home from '../pages/Home';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
 	// Mian layout route object --- ekai 100
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'about', //Main path er under a ei path gulo //Relative path
-				element: <About />,
+				element: (
+					<PrivateRoute>
+						<About />
+					</PrivateRoute>
+				),
 			},
 			{
 				path: 'contact',
