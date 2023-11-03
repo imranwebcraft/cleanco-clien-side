@@ -1,5 +1,13 @@
+import { Outlet } from 'react-router-dom';
+import MainLayout from './components/layout/MainLayout';
+
 const App = () => {
-	return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+	return (
+		<MainLayout>
+			{/* As children */}
+			<Outlet></Outlet>
+		</MainLayout>
+	);
 };
 
 export default App;
